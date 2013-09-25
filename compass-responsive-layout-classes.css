@@ -1,0 +1,179 @@
+/* snippet with layout styling for compass framework for reference - doesn't work on its own! */
+
+/* 2. Layout
+-------------------------------------------------------------- */
+/* layout */
+header, .main, .colophon, nav.main, .fatfooter {
+	margin: 0 auto;
+	width: 96%;
+	max-width: 1000px;
+}
+body, footer {
+	width: 100%;
+	margin: 20px 0;
+	padding-bottom: 10px;
+}
+
+
+/* floats */
+.quarter,
+.one-third,
+.two-thirds,
+.half {
+	float: left;
+}
+/* widths and margins for different proportions */
+.one-third {
+	width: 32%;
+}
+.two-thirds {
+	width: 65.5%;
+}
+.quarter {
+	width: 23.5%;
+}
+.three-quarters {
+	width: 74.5%;
+}
+.half {
+	width: 48%;
+}
+
+/* margins - 1% generally except for the .half width. Remember that these will be cumulative
+- so four items side by side will have 6% added in margins, 
+assuming the left and right ones are given .left and .right classes */
+.one-third {
+	margin: 0 0.5%;
+}
+.quarter,
+.two-thirds {
+	margin: 0 0.5%;
+}
+.left,
+.quarter.left,
+.one-third.left {
+	margin: 0 1% 0 0;
+	float: left;
+}
+.right,
+.quarter.right,
+.one-third.right {
+	margin: 0 0 0 1%;
+	float: right;
+}
+.half.left {
+	width: 48%;
+	margin: 0 2% 0 0;
+}
+.half.right {
+	width: 48%;
+	margin: 0 0 0 2%;
+}
+.two-thirds.left {
+	margin: 0 1% 0 0;
+}
+.two-thirds.right {
+	margin: 0 0 0 1%;
+	float: right;
+}
+
+/* adjust margins around floated images in line with larger screen size */
+#content .alignleft,
+#content img.alignleft {
+	margin-right: 3%;
+}
+#content .alignright,
+#content img.alignright {
+	margin-left: 3%;
+}
+
+/* styles to ensure floated elements inside block elements laid out correctly */
+header,
+div.main,
+aside {
+	overflow: auto;
+}
+.main-nav {
+	width: 100%;
+	clear: both;
+}
+div.main, footer {
+	clear: both;
+}
+
+/* styles for alignment - not used by main layout blocks but may be used within content on occasion */
+.floatleft {
+	float: left;
+	margin-right: 3%; /* approx 10px */
+}
+.floatright {
+	float: right;
+	margin-left: 3%; /* approx 10px */
+}
+.center {
+	float: none;
+	margin: 0 auto;
+}
+
+/* class for clearing elements */
+.clear {
+	clear: both;
+}
+
+/* 12. Media queries
+-------------------------------------------------------------- */
+
+/* media queries for large desktop screens */
+@media screen and ( min-width: 1200px ) {
+}
+
+/* media queries for larger screens such as small tablets in landscape or large tablets in portrait */
+@media screen and ( max-width: 780px ) {
+	/* only the .quarter layout class is relevant here - all other classes will have full width */
+	.quarter {
+		width: 48%;
+	}
+	.quarter.left {
+		margin-right: 2%;
+	}
+	.quarter.right {
+		margin-left: 2%;
+	}
+	footer .third.quarter.widget-area {
+		clear: both;
+	}
+}
+
+/* media queries for small screens in landscape mode (or similar) */
+@media screen and ( max-width: 600px ) {
+	/* overall margins and padding - mainly vertical. These create some space around the elements of the layout */
+	body, footer {
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+	header, .main, .colophon, nav.main, .fatfooter {
+		margin: 0 10px;
+	}
+	/* width sizing all full width in small screens */
+	.quarter,
+	.one-third,
+	.half,
+	.two-thirds,
+	.three-quarters,
+	.full-width {
+		width: 100%;
+		margin: 0;
+	}
+	/* padding adjustments */
+	header, footer {
+		padding: 10px 0;
+	}
+	.widget-area {
+		padding: 0 0 10px 0;
+	}
+}
+/* media queries for small screens in portrait mode (or similar) */
+@media screen and ( max-width: 400px ) {
+
+}
